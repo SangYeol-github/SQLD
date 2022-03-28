@@ -1,0 +1,32 @@
+1. 데이터 정의 언어 - ( DDL : Data Definition Language )
+테이블이나 관계의 구조를 생성하는데 사용하며 CREATE, ALTER, DROP,TRUNCATE 문 등이 있다.
+ - CREATE : 데이터베이스, 테이블등을 생성
+ - ALTER : 테이블을 수정
+ - DROP :  데이터베이스, 테이블을 삭제
+ - RENAME : 테이블 이름 변경
+ - TRUNCATE : 테이블을 초기화
+
+2. 데이터 조작 언어 - ( DML : Data Manipulation Language ) 
+테이블에 데이터 검색, 삽입, 수정, 삭제하는 데 사용하며 SELECT, UPDATE, DELETE, INSERT문 등이 있다.
+ - INSERT - 데이터베이스에서 데이터를 등록(삽입).
+ - UPDATE - 데이터베이스의 데이터를 업데이트.
+ - DELETE - 데이터베이스의 데이터를 삭제.
+ - SELECT - 데이터베이스에서 데이터를 검색.
+
+
+3. 데이터 제어 언어 - ( DCL : Data Control Language)
+데이터의 사용 권한을 관리하는 데 사용하며 GRANT, REVOKE 문 등이 있다.
+ - GRANT : 특정 데이터베이스 사용자에게 특정 작업에 대한 수행 권한을 부여한다.
+ - REVOKE : 특정 데이터베이스 사용자에게 특정 작업에 대한 수행 권한을 박탈 or 회수 한다.
+
+4. TCL(TRANSACTION CONTROL LANGUAGE) 테이블 제어
+ - COMMIT : 제어하고, 
+ - ROLLBACK : 돌아가고 , 
+ - SAVEPOINT : 특정저장 위치지정 
+
+NULL과의 모든 비교(IS NULL 제외 )는 알수없음을 반환한다.
+A = 10
+A = null X NULL과의 비교는 성립이 안된다.
+A IS NULL 
+A IS NOT NULL 이런식으로 표시한다.
+정렬 시 오라클에서는 NULL은 가장 큰 값이다. 모르는 값이지만 출력시 제일 큰 값으로 측정된다.
