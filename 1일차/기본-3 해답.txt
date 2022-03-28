@@ -41,8 +41,8 @@ SAL>=3000 OR EMPNO=200;
 [TAB1] 
 C1  C2 C3
 1    2   3
-      2   3
-          3
+     2   3
+         3
 SELECT SUM(COALESCE(C1, C2, C3) FROM TAB1;
 널이 아닌값을 찾아준다.
 C1= 1 C2= 2 C3= 3 SUM = 6
