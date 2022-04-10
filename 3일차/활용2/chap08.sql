@@ -1,0 +1,69 @@
+-- 2
+CREATE VIEW V_TBL
+AS 
+SELECT * FROM EXAM2
+WHERE C1='B' OR C1 IS NULL;
+
+SELECT * FROM V_TBL;
+
+SELECT SUM(C2) C2
+FROM V_TBL
+WHERE C2>=200 AND C1='B';
+
+-- 3
+SELECT 구매고객, 구매월, COUNT(*) "총 구매건", SUM(구매금액) "총 구매액" 
+FROM EXAM03_1
+GROUP BY ROLLUP (구매고객, 구매월);
+
+SELECT 구매고객, 구매월, COUNT(*) "총 구매건", SUM(구매금액) "총 구매액" 
+FROM EXAM03_1
+GROUP BY GROUPING SETS(구매고객, 구매월);
+
+SELECT 구매고객, 구매월, COUNT(*) "총 구매건", SUM(구매금액) "총 구매액" 
+FROM EXAM03_1
+GROUP BY CUBE(구매고객, 구매월);
+
+-- 4
+SELECT * FROM EXAM04_2;
+SELECT * FROM EXAM04_1;
+SELECT 설비ID, 에너지코드, SUM(사용량) AS 사용량합계
+FROM EXAM04_2
+GROUP BY CUBE (설비ID, 에너지코드)
+ORDER BY 설비ID;
+
+SELECT B.설비ID, B.에너지코드, SUM(B.사용량) AS 사용량합계
+FROM EXAM04_1 A JOIN EXAM04_2 B
+ON A.설비ID = B.설비ID
+GROUP BY CUBE (B.설비ID, B.에너지코드)
+ORDER BY 설비ID;
+
+-- 5  --> 결과값 다름.
+SELECT * FROM EXAM05;
+SELECT 상품ID, 월, SUM(매출액) AS 매출액
+FROM EXAM05
+WHERE 월 BETWEEN '2014.10' AND '2014.12'
+GROUP BY GROUPING SETS(상품ID, 월);
+
+
+
+SELECT 상품ID, 월, SUM(매출액) AS 매출액
+FROM EXAM05
+WHERE 월 BETWEEN '2014.10' AND '2014.12'
+GROUP BY GROUPING SETS(상품ID, 월)
+ORDER BY 상품ID, 월;
+
+DROP TABLE EXAM05;
+
+-- 7 
+SELECT 추천경로, 추천인, 피추천인, 추천점수
+FROM (SELECT 추천경로, 추천인, 피추천인, 추천점수, ROW_NUMBER( ) 
+ OVER (PARTITION BY 추천경로 ORDER BY 추천점수 DESC) AS RNUM
+ FROM EXAM07)
+WHERE RNUM=1;
+
+-- 9
+SELECT Y.사원ID, Y.부서ID, Y.사원명, Y.연봉
+FROM (SELECT 사원ID, MAX(연봉) OVER(PARTITION BY 부서ID) AS 최고연봉
+FROM EXAM09) X, EXAM09 Y
+WHERE X.사원ID = Y.사원ID
+AND X.최고연봉=Y.연봉;
