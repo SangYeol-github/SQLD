@@ -197,3 +197,8 @@ RANDOM ACCESS -> NLJ(Nested Loop Join)
 권한을 묶어서 한꺼번에 부여 = ROLE
 
 CREATE, TRUNCATE -> AUTO COMMIT
+
+점선 : 비식별자
+선 : 식별자
+o 선택
+줄 : 1:M, 1 대 다
