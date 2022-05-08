@@ -1,0 +1,16 @@
+cmd에서 oraclesql ID생성방법
+
+sqlplus
+
+system  -> ID
+1234	-> pwd
+
+create user C##STUDY identified by 1234;
+
+grant connect, resource, dba to C##STUDY;
+
+commit;
+
+select * from all_users;
+
+drop user C##STUDY cascade;

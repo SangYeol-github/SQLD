@@ -1,0 +1,51 @@
+활용-1
+1. 4
+2. JOIN 구매정보 B ON (A.고객번호=B.고객번호), HAVING COUNT(B.구매번호) >=3
+3. 1 1.USING(STADIUM_ID); USING 뒤에는 컬럼명 하나만 나옴. 2. TEAM.STADIUM_ID -> STADIUM.STADIUM_ID,
+4. CROSS JOIN =,	Cartesian Product(A=3, B=2 -> 6)
+5. 3, 5, 3
+6. LEFT OUTTER JOIN
+7. A  1  N  N
+   B  2   B  2
+   C  3  C  3
+   D  4  N  N
+   E  5  N  N
+8.     EXCEPT = MINUS
+9. 2 UNION= 합집합,  MINUS,EXCEPT= 차집합,  INTERSECT = 교집합
+10. 5 3 UNION ALL = 중복되든 안되든 다 붙임  UNION = 중복(제거) 안 되는것만 붙임
+11. COL1	   COL2     CNT
+      AA       A1        1
+      AB       A2        1
+      AC       A3        1
+      AD       A4        1
+12. 3
+13. C
+     A
+     C
+     B
+     D 
+   순방향= 부모->자식, 역방향 = 자식->부모  PRIOR(부모) C1(자녀)=C2(부모) 순방향  SIBLINGS = 조건에 맞춰줌
+14. 4  
+   root 뿌리 <- 부모 1
+   leap      <- 자식
+15.  001
+     003
+     004
+     005
+    FK 부모   PK 자녀  순방향
+16. 1
+    SELF JOIN 두 테이블 볼 필요 없음, 연간된 컬럼X
+17. 2
+18. 안해도 됨.
+19. 2 
+    IN, ALL 은 다중 행 비교 연산자
+    다중 행 -> 단일 행 가능
+    주로 메인쿼리는 연관 서브쿼리에서 읽혀진 데이터에 대해 서브쿼리에서 해
+    당 조건이 만족하는지를 확인하는 방식으로 수행된다.
+20. 4
+    ROLLUP(A) -> A 속에
+    ROLLUP(A,B) A속에 A,B
+    CUBE(A) = ROLLUP(A)
+    CUBE(A,B) = ROLLUP + B
+    GROUPING SETS(A) -> A만
+    ROLLUP만 컬럼순서 상관있음.
