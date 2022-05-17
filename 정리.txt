@@ -57,6 +57,8 @@ ERD -> 피터첸(Peter Chen), 도출→엔터티 배치→관계설정→관계�
 
 엔터티 -> 집합 - 2개 이상의 속성(이름,주소), 2개 이상의 인스턴스(이름, 주소 연락처 ......)
 최소 1개와 관계를 가짐						  a     b      c
+https://brunch.co.kr/@ambler/55
+
 
 가장 중요한 엔터티를 좌측 상단에 배치하고 
 추가 발생되는 엔터티들을 우측 편과 하단에 배치하
@@ -112,15 +114,15 @@ ROLLUP만 컬럼순서 상관있음.
 
 동일 SQL문에 대해 실행계획이 다르면 실행 결과도 달라질 수 없다.
 
-인덱스는 조회, 삽입, 삭제, 갱신 연산의 속도를 향상시킨다.
-대량의 데이터를 삽입할 때는 데이터를 입력하고 인덱스를 생성하는 
-것이 좋다.
+
+인덱스는 목차
+https://velog.io/@gillog/SQL-Index%EC%9D%B8%EB%8D%B1%EC%8A%A4
+인덱스 = NESTED LOOP JOIN(NL JOIN)
 
 다양한 JOIN 기법 중 HASH 
 JOIN, SORT MERGE JOIN 은 DW(DATA WAREHOUSE, 분석용 데이터베
 이스) 등에서 데이터를 집계하는 업무에 많이 사용된다.
 
-인덱스 = NESTED LOOP JOIN(NL JOIN)
 
 **ERD    + 필수  o선택
 
